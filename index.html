@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quién Soy Yo</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1>Hola, soy Juan Sebastián Granada Ramírez</h1>
+            <p>Bienvenidos a mi página personal</p>
+            <nav>
+                <ul>
+                    <li class="nav-about"><a href="#about" onclick="showSection('about'); playSound()">Sobre Mí</a></li>
+                    <li class="nav-skills"><a href="#skills" onclick="showSection('skills'); playSound()">Habilidades</a></li>
+                    <li class="nav-gallery"><a href="#gallery" onclick="showSection('gallery'); playSound()">Galería</a></li>
+                    <li class="nav-contact"><a href="#contact" onclick="showSection('contact'); playSound()">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <main>
+        <!-- Sección de bienvenida -->
+        <section id="welcome" class="welcome">
+            <div class="welcome-content">
+                <h2>¡Hola y Bienvenidos!</h2>
+                <p>Soy Juan Sebastián Granada Ramírez, y estoy emocionado de que estés aquí.</p>
+                <p>Descubre más sobre mí y mis proyectos explorando las diferentes secciones.</p>
+            </div>
+        </section>
+        
+
+        <!-- Secciones ocultas -->
+        <section id="about" class="section about-me">
+            <div class="container">
+                <h2>Sobre Mí</h2>
+                <p>Hola, soy Juan Sebastián Granada Ramírez. Soy un apasionado de la tecnología y la programación, porque siempre me ha gustado la tecnología y le agarré cariño al arte de programar. Mi objetivo principal es completar mi formación profesional y obtener mi título en Ingeniería de Software. Actualmente, estoy estudiando en la Institución Universitaria Pascual Bravo, donde profundizo mis conocimientos en esta carrera. Además, cuento con una formación previa como Técnico en Desarrollo de Software, realizada en el Servicio Nacional de Aprendizaje (SENA), lo cual me proporcionó una sólida base en programación.</p>
+            </div>
+        </section>
+        
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li><strong>HTML:</strong> Creación de estructuras web.</li>
+                    <li><strong>CSS:</strong> Diseño y estilización de interfaces con CSS.</li>
+                    <li><strong>JavaScript:</strong> Desarrollo de funcionalidades interactivas en la web. (En proceso de mejorar el conocimiento en JavaScript)</li>
+                    <li><strong>Base de Datos:</strong> Manejo básico de bases de datos.</li>
+                    <li><strong>Inglés:</strong> Actualmente en proceso de aprendizaje para mejorar habilidades en el idioma.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="gallery" class="section gallery">
+            <div class="container">
+                <h2>Galería</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="../Soy yo/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../Soy yo/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="foto3.jpg" alt="Foto 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="foto4.jpg" alt="Foto 4">
+                    </div>
+                    <!-- Añadir más fotos aquí -->
+                    <div class="gallery-item">
+                        <img src="../Soy yo/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../Soy yo/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto con contenedor -->
+<section id="contact" class="section contact">
+    <div class="container">
+        <h2>Contacto</h2>
+        <p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través de <a href="mailto:granadasebastian140@gmail.com">mi correo electrónico</a> o seguirme en mis redes sociales:</p>
+        <ul>
+            <li><a href="https://github.com/SebastianGR1" target="_blank">GitHub</a></li>
+            <!-- Añadir más redes sociales aquí si lo deseas -->
+        </ul>
+    </div>
+</section>
+
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Juan Sebastián Granada Ramírez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Elemento de audio -->
+    <audio id="click-sound" src="./sounds/sfx-cartoons12.mp3"></audio>
+
+    <!-- Aquí va tu script -->
+    <script>
+        function playSound() {
+            var audio = document.getElementById('click-sound');
+            audio.play();
+        }
+
+        function showSection(id) {
+            // Ocultar la sección de bienvenida
+            document.getElementById('welcome').style.display = 'none';
+
+            // Ocultar todas las secciones
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Mostrar la sección seleccionada
+            var section = document.getElementById(id);
+            if (section) {
+                section.style.display = 'block';
+            }
+        }
+
+        // Mostrar la sección de bienvenida al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('welcome').style.display = 'flex'; // Mostrar la sección de bienvenida
+        });
+    </script>
+</body>
+</html>

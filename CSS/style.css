@@ -1,0 +1,272 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Contenedor general */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos del encabezado */
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* Colores específicos para cada elemento de lista */
+nav ul li.nav-about a {
+    color: #ff0000;
+}
+
+nav ul li.nav-skills a {
+    color: #004b88;
+}
+
+nav ul li.nav-gallery a {
+    color: #9C27B0;
+}
+
+nav ul li.nav-contact a {
+    color: #00ddff;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #cddc39;
+}
+
+/* Estilos de las secciones */
+.section {
+    padding: 60px 20px;
+    display: none;
+}
+
+/* Mostrar la sección de bienvenida */
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4CAF50, #2E8B57);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.welcome-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.welcome h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.welcome p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de la sección sobre mí */
+.about-me {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about-me h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-me p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #555;
+    max-width: 700px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Estilos de la sección de habilidades */
+.skills {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills ul li {
+    font-size: 1.2em;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.skills ul li:last-child {
+    border-bottom: none;
+}
+
+.skills strong {
+    color: #ff0000;
+}
+
+/* Estilos de la sección de galería */
+.gallery {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Estilos para la sección de contacto */
+.contact {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.contact a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos del pie de página */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 1em;
+}
