@@ -18,11 +18,11 @@
                     <li class="nav-skills"><a href="#skills" onclick="showSection('skills'); playSound()">Habilidades</a></li>
                     <li class="nav-gallery"><a href="#gallery" onclick="showSection('gallery'); playSound()">Galería</a></li>
                     <li class="nav-contact"><a href="#contact" onclick="showSection('contact'); playSound()">Contacto</a></li>
+                    <li class="nav-celebration"><a href="#celebration" onclick="showSection('celebration'); playSound()">Celebración</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
     
     <main>
         <!-- Sección de bienvenida -->
@@ -33,7 +33,6 @@
                 <p>Descubre más sobre mí y mis proyectos explorando las diferentes secciones.</p>
             </div>
         </section>
-        
 
         <!-- Secciones ocultas -->
         <section id="about" class="section about-me">
@@ -55,46 +54,62 @@
                 </ul>
             </div>
         </section>
+        
         <section id="gallery" class="section gallery">
             <div class="container">
                 <h2>Galería</h2>
+                <p>En mi tiempo libre me gusta dibujar, Aquí hay demostraciones de mis dibujos</p>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="../Quiensoy/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 1">
+                        <img src="../Quiensoy/img/1.jpg" alt="Foto 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="../Quiensoy/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 2">
+                        <img src="../Quiensoy/img/2.jpg" alt="Foto 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="foto3.jpg" alt="Foto 3">
+                        <img src="../Quiensoy/img/3.jpg" alt="Foto 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="foto4.jpg" alt="Foto 4">
+                        <img src="../Quiensoy/img/4.jpg" alt="Foto 4">
                     </div>
                     <!-- Añadir más fotos aquí -->
                     <div class="gallery-item">
-                        <img src="../Quiensoy/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 5">
+                        <img src="../Quiensoy/img/5.jpg" alt="Foto 5">
                     </div>
                     <div class="gallery-item">
-                        <img src="../Quiensoy/img/5a18437d398b46f5ad4dd2e179606d79.jpg" alt="Foto 6">
+                        <img src="../Quiensoy/img/6.jpg" alt="Foto 6">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../Quiensoy/img/7.jpg" alt="Foto 7">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../Quiensoy/img/8.jpg" alt="Foto 8">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de contacto con contenedor -->
-<section id="contact" class="section contact">
-    <div class="container">
-        <h2>Contacto</h2>
-        <p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través de <a href="mailto:granadasebastian140@gmail.com">mi correo electrónico</a> o seguirme en mis redes sociales:</p>
-        <ul>
-            <li><a href="https://github.com/SebastianGR1" target="_blank">GitHub</a></li>
-            <!-- Añadir más redes sociales aquí si lo deseas -->
-        </ul>
-    </div>
-</section>
+        <!-- Sección de contacto -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través de <a href="mailto:granadasebastian140@gmail.com">mi correo electrónico</a> o seguirme en mis redes sociales:</p>
+                <ul>
+                    <li><a href="https://github.com/SebastianGR1" target="_blank">GitHub</a></li>
+                    <!-- Añadir más redes sociales aquí si lo deseas -->
+                </ul>
+            </div>
+        </section>
 
-        
+        <!-- Sección de celebración -->
+        <section id="celebration" class="section celebration">
+            <div class="container">
+                <h2>¡Feliz Cumpleaños!</h2>
+                <p>¡Si!, ¡Hoy es mi dia!!</p>
+                <div class="confetti"></div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -103,37 +118,99 @@
         </div>
     </footer>
 
-    <!-- Elemento de audio -->
-    <audio id="click-sound" src="../Quiensoy/sounds/sfx-cartoons12.mp3"></audio>
+<!-- Elementos de audio -->
+<audio id="sound-about" src="../Quiensoy/sounds/sfx-cartoons12.mp3"></audio>
+<audio id="sound-skills" src="../Quiensoy/sounds/sfx-piano-fantasia.mp3"></audio>
+<audio id="sound-gallery" src="../Quiensoy/sounds/sfx-guitar2.mp3"></audio>
+<audio id="sound-contact" src="../Quiensoy/sounds/sfx-impact23.mp3"></audio>
+<audio id="sound-celebration" src="../Quiensoy/sounds/416562__theliongirl10__happy-birthday-to-you-made-by-me.mp3"></audio>
+
 
     <!-- Aquí va tu script -->
     <script>
-        function playSound() {
-            var audio = document.getElementById('click-sound');
-            audio.play();
+        function playSound(soundId) {
+            // Detener cualquier sonido que esté reproduciéndose
+            var sounds = document.querySelectorAll('audio');
+            sounds.forEach(function(sound) {
+                sound.pause();
+                sound.currentTime = 0;
+            });
+    
+            // Reproducir el sonido correspondiente
+            var audio = document.getElementById(soundId);
+            if (audio) {
+                audio.play();
+            }
         }
-
+    
         function showSection(id) {
             // Ocultar la sección de bienvenida
             document.getElementById('welcome').style.display = 'none';
-
+    
             // Ocultar todas las secciones
             var sections = document.querySelectorAll('.section');
             sections.forEach(function(section) {
                 section.style.display = 'none';
             });
-
+    
             // Mostrar la sección seleccionada
             var section = document.getElementById(id);
             if (section) {
                 section.style.display = 'block';
             }
+    
+            // Mostrar la sección de celebración si es la indicada
+            if (id === 'celebration') {
+                createConfetti();
+            }
         }
-
+    
+        // Función para crear el confeti
+        function createConfetti() {
+            const container = document.querySelector('.celebration .confetti');
+            container.innerHTML = ''; // Limpiar el contenedor
+    
+            for (let i = 0; i < 100; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 50%)`; // Colores aleatorios
+                piece.style.width = `${Math.random() * 15 + 5}px`;
+                piece.style.height = piece.style.width;
+                piece.style.left = `${Math.random() * 100}%`;
+                piece.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                piece.style.animationDelay = `${Math.random() * 3}s`;
+                piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+                container.appendChild(piece);
+            }
+        }
+    
         // Mostrar la sección de bienvenida al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('welcome').style.display = 'flex'; // Mostrar la sección de bienvenida
         });
+    
+        // Añadir eventos de clic a los enlaces de navegación
+        document.querySelector('.nav-about a').addEventListener('click', function() {
+            showSection('about');
+            playSound('sound-about');
+        });
+        document.querySelector('.nav-skills a').addEventListener('click', function() {
+            showSection('skills');
+            playSound('sound-skills');
+        });
+        document.querySelector('.nav-gallery a').addEventListener('click', function() {
+            showSection('gallery');
+            playSound('sound-gallery');
+        });
+        document.querySelector('.nav-contact a').addEventListener('click', function() {
+            showSection('contact');
+            playSound('sound-contact');
+        });
+        document.querySelector('.nav-celebration a').addEventListener('click', function() {
+            showSection('celebration');
+            playSound('sound-celebration');
+        });
     </script>
+    
 </body>
 </html>

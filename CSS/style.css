@@ -206,6 +206,13 @@ nav ul li a:hover {
     color: #333;
 }
 
+.gallery p {
+    font-size: 30px; /* Ajusta el tamaño de la fuente aquí */
+    margin-bottom: 40px;
+    color: #555; /* Ajusta el color del texto si es necesario */
+    line-height: 1.5; /* Ajusta el espaciado entre líneas para mayor legibilidad */
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -220,10 +227,11 @@ nav ul li a:hover {
 
 .gallery-item img {
     width: 100%;
-    height: 200px;
+    height: 380px;
     object-fit: cover;
     border-radius: 8px;
 }
+
 
 /* Estilos para la sección de contacto */
 .contact {
@@ -270,3 +278,63 @@ footer {
 footer p {
     font-size: 1em;
 }
+
+
+ /* Estilos de la sección de celebración */
+ .celebration {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    overflow: hidden; /* Asegura que el confeti no se desborde */
+    display: none; /* Inicialmente oculta */
+}
+
+.celebration h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.celebration p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0.8;
+    border-radius: 50%;
+    transform-origin: center;
+    animation: confetti 5s linear infinite;
+}
+
+@keyframes confetti {
+    0% {
+        transform: translateY(-100vh) rotate(0);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
